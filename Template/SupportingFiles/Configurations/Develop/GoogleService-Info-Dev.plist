@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>32760041861-7lspttkfvsm7673k2k82i0r1fcj4u9l9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.32760041861-7lspttkfvsm7673k2k82i0r1fcj4u9l9</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>32760041861-elp23u96kkg6fuln27jb53mutbeioolo.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAZkUuNR-wsr_wfN5r4MzPQA8miT80N6hM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>32760041861</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.hubmee.app.dev</string>
+	<key>PROJECT_ID</key>
+	<string>hubmee-294017</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hubmee-294017.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:32760041861:ios:2fbb89ac7ed51c5f6e74ec</string>
+</dict>
+</plist>

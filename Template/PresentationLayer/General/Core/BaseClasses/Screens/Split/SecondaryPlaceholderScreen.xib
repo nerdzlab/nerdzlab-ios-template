@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Archivo-SemiBold.ttf">
+            <string>Archivo-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondaryPlaceholderScreen" customModule="Hubmee" customModuleProvider="target">
+            <connections>
+                <outlet property="textLabel" destination="JpH-fk-eiS" id="hJQ-tH-t1q"/>
+                <outlet property="view" destination="iN0-l3-epB" id="KqK-0X-LYR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpH-fk-eiS">
+                    <rect key="frame" x="64" y="438.66666666666669" width="265" height="0.0"/>
+                    <fontDescription key="fontDescription" name="Archivo-SemiBold" family="Archivo" pointSize="17"/>
+                    <color key="textColor" name="Neutral600"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="White"/>
+            <constraints>
+                <constraint firstItem="JpH-fk-eiS" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="2VX-fh-0bE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JpH-fk-eiS" secondAttribute="trailing" constant="64" id="eAI-u1-9Rm"/>
+                <constraint firstItem="JpH-fk-eiS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="64" id="o5V-iO-HfM"/>
+            </constraints>
+            <point key="canvasLocation" x="97" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Neutral600">
+            <color red="0.35294117647058826" green="0.38823529411764707" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

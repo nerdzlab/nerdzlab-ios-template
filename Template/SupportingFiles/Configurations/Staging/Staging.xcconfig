@@ -1,0 +1,17 @@
+//
+//  Staging.xcconfig
+//  Template
+//
+//  Created by NerdzLab
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Application
+
+APP_DISPLAY_NAME = Staging
+PRODUCT_BUNDLE_IDENTIFIER = com.stage.template.app
+CONFIG_ROOT_FOLDER = Staging
+GOOGLE_PLIST_NAME = GoogleService-Info-Stage
+OTHER_SWIFT_FLAGS = $(inherited) -DSTAGE_ENV

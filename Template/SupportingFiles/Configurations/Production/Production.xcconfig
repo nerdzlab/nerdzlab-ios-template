@@ -1,0 +1,17 @@
+//
+//  Production.xcconfig
+//  Template
+//
+//  Created by NerdzLab
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Application
+
+APP_DISPLAY_NAME = Production
+PRODUCT_BUNDLE_IDENTIFIER = com.prod.template.app
+CONFIG_ROOT_FOLDER = Production
+GOOGLE_PLIST_NAME = GoogleService-Info-Prod
+OTHER_SWIFT_FLAGS = $(inherited) -DPROD_ENV

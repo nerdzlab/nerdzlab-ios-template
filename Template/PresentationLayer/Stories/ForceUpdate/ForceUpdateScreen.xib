@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NeurialGrotesk-Bold.otf">
+            <string>NeurialGrotesk-Bold</string>
+        </array>
+        <array key="NeurialGrotesk-Regular.otf">
+            <string>NeurialGrotesk-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForceUpdateScreen" customModule="Hubmee" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="gXy-Kb-ked" id="v0l-tr-ETk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gXy-Kb-ked">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aX-Ne-kRA">
+                    <rect key="frame" x="20" y="385.33333333333331" width="353" height="74.666666666666686"/>
+                    <string key="text">Update your app to
+the latest version</string>
+                    <fontDescription key="fontDescription" name="NeurialGrotesk-Bold" family="Neurial Grotesk" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="nz_textLocalization" value="HARD_UPDATE_TITLE"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-logo-vertical-image" translatesAutoresizingMaskIntoConstraints="NO" id="KfR-3K-2rl">
+                    <rect key="frame" x="141.66666666666666" y="265.33333333333331" width="110" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="mr4-Kc-99o"/>
+                        <constraint firstAttribute="height" constant="110" id="ysb-Cr-Leg"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To continue enjoying Hubmee and it’s new features, please update your app to the latest version by tapping the button below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vd7-sE-bca">
+                    <rect key="frame" x="30" y="477" width="333" height="84"/>
+                    <fontDescription key="fontDescription" name="NeurialGrotesk-Regular" family="Neurial Grotesk" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="nz_textLocalization" value="HARD_UPDATE_SUBTITLE"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will be redirected to the iOS app store." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnl-NO-A89">
+                    <rect key="frame" x="20" y="742" width="353" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="nz_textLocalization" value="HARD_UPDATE_YOU_WILL_BE_REDIRECTED_TITLE"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjT-qo-4Ee">
+                    <rect key="frame" x="40" y="680" width="313" height="50"/>
+                    <color key="backgroundColor" name="Primary500"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="rs2-Ps-SRp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NeurialGrotesk-Bold" family="Neurial Grotesk" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Update now"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="nz_textLocalization" value="HARD_UPDATE_UPDATE_NOW"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onUpdateButtonDidPressed" destination="-1" eventType="touchUpInside" id="6nr-yq-hmf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="5PK-dT-uqb"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="KfR-3K-2rl" firstAttribute="centerX" secondItem="5PK-dT-uqb" secondAttribute="centerX" id="0Ob-Ja-Iq0"/>
+                <constraint firstItem="5PK-dT-uqb" firstAttribute="trailing" secondItem="XjT-qo-4Ee" secondAttribute="trailing" constant="40" id="3kP-iS-56g"/>
+                <constraint firstItem="3aX-Ne-kRA" firstAttribute="centerX" secondItem="5PK-dT-uqb" secondAttribute="centerX" id="6yq-Y4-J0Y"/>
+                <constraint firstItem="XjT-qo-4Ee" firstAttribute="leading" secondItem="5PK-dT-uqb" secondAttribute="leading" constant="40" id="8Yj-P2-qjc"/>
+                <constraint firstItem="Vd7-sE-bca" firstAttribute="top" secondItem="3aX-Ne-kRA" secondAttribute="bottom" constant="17" id="9gv-tt-wWb"/>
+                <constraint firstItem="bnl-NO-A89" firstAttribute="leading" secondItem="5PK-dT-uqb" secondAttribute="leading" constant="20" id="AjR-Qi-OXa"/>
+                <constraint firstItem="3aX-Ne-kRA" firstAttribute="top" secondItem="KfR-3K-2rl" secondAttribute="bottom" constant="10" id="EA6-Up-OSn"/>
+                <constraint firstItem="5PK-dT-uqb" firstAttribute="trailing" secondItem="3aX-Ne-kRA" secondAttribute="trailing" constant="20" id="FZb-rz-vfD"/>
+                <constraint firstItem="bnl-NO-A89" firstAttribute="centerX" secondItem="5PK-dT-uqb" secondAttribute="centerX" id="Lkz-rx-4Qd"/>
+                <constraint firstItem="5PK-dT-uqb" firstAttribute="trailing" secondItem="bnl-NO-A89" secondAttribute="trailing" constant="20" id="NHo-Jx-M0f"/>
+                <constraint firstItem="5PK-dT-uqb" firstAttribute="trailing" secondItem="Vd7-sE-bca" secondAttribute="trailing" constant="30" id="SAO-n1-t4t"/>
+                <constraint firstItem="3aX-Ne-kRA" firstAttribute="leading" secondItem="5PK-dT-uqb" secondAttribute="leading" constant="20" id="Tus-Wp-srH"/>
+                <constraint firstItem="Vd7-sE-bca" firstAttribute="leading" secondItem="5PK-dT-uqb" secondAttribute="leading" constant="30" id="cx6-mZ-3iU"/>
+                <constraint firstItem="bnl-NO-A89" firstAttribute="top" secondItem="XjT-qo-4Ee" secondAttribute="bottom" constant="12" id="jVL-hB-eDl"/>
+                <constraint firstItem="5PK-dT-uqb" firstAttribute="bottom" secondItem="bnl-NO-A89" secondAttribute="bottom" constant="60" id="sGe-mk-CF8"/>
+                <constraint firstItem="3aX-Ne-kRA" firstAttribute="centerY" secondItem="5PK-dT-uqb" secondAttribute="centerY" constant="-16" id="yRy-uo-C53"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="113"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="app-logo-vertical-image" width="45" height="55"/>
+        <namedColor name="Primary500">
+            <color red="0.34901960784313724" green="0.70588235294117652" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
