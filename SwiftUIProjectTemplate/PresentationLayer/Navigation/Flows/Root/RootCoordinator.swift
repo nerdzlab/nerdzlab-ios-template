@@ -7,49 +7,59 @@
 
 import SwiftUI
 import Combine
+import NerdzInject
 
 @MainActor
 @Observable
 final class RootCoordinator {
-    
+
     // MARK: - Properties(public)
-    
+
     var isOnboardingCompleted: Bool = false
-    
+
     // MARK: - Properties(private)
-    
+
     @ObservationIgnored private lazy var onboardingCoordinator = OnboardingCoordinator()
     @ObservationIgnored private lazy var mainCoordinator = MainCoordinator()
-    
+
     private var cancellables: Set<AnyCancellable> = []
-    
+
     // MARK: - Life cycle
-    
+
     init() {
         setup()
     }
-    
+
     // MARK: - Methods(public)
-    
+
     func makeOnboardingView() -> some View {
         OnboardingCoordinatorView(coordinator: onboardingCoordinator)
             .toastable()
     }
-    
+
     func makeMainView() -> some View {
         MainCoordinatorView(coordinator: mainCoordinator)
             .toastable()
     }
-    
+
     // MARK: - Methods(private)
-    
+
     private func setup() {
-        initialDataSetup()
+        setupEnvironment()
         setupListeners()
-        configureNavigationBarAppearance()
+        setupNavigationBar()
+        setupInitialState()
+    }
+
+    private func setupEnvironment() {
+        setupDependencies()
+    }
+
+    private func setupDependencies() {
+        NerdzInject.shared.registerObject(ToastManager())
     }
     
-    private func configureNavigationBarAppearance() {
+    private func setupNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor.white
@@ -77,7 +87,7 @@ final class RootCoordinator {
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
     
-    private func initialDataSetup() {
+    private func setupInitialState() {
         isOnboardingCompleted = true
     }
     
