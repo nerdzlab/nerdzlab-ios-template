@@ -50,7 +50,7 @@ Build and test via XcodeBuildMCP tools when available, otherwise `xcodebuild`.
 
 ## Conventions
 
-- Use `String(localized:)` and String Catalogs for all user-facing strings. No SwiftGen for localization.
+- All user-facing strings must live in String Catalogs (`Localizable.xcstrings`) and be accessed through Xcode's native auto-generated symbols (`LocalizedStringResource` / `String.LocalizationValue`), e.g. `Text(.welcomeTitle)` or `LocalizedStringResource.welcomeTitle`. Enable "Generate String Catalog Symbols" on the catalog. Do not use SwiftGen for localization, do not call `String(localized:)` with raw string keys, and never reference a localization key by raw string.
 - Assets (colors, images, icons) go in `SupportingFiles/Assets/` and are accessed via SwiftGen-generated code.
 - Never hardcode colors or font sizes. Use the design system.
 - Never use SF Symbols / system images via `Image(systemName:)`. Add the icon to the asset catalog and reference it through the SwiftGen-generated enum (e.g. `Image(asset: Asset.Icons.someIcon)`).
