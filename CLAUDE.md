@@ -53,6 +53,9 @@ Build and test via XcodeBuildMCP tools when available, otherwise `xcodebuild`.
 - Use `String(localized:)` and String Catalogs for all user-facing strings. No SwiftGen for localization.
 - Assets (colors, images, icons) go in `SupportingFiles/Assets/` and are accessed via SwiftGen-generated code.
 - Never hardcode colors or font sizes. Use the design system.
+- Never use SF Symbols / system images via `Image(systemName:)`. Add the icon to the asset catalog and reference it through the SwiftGen-generated enum (e.g. `Image(asset: Asset.Icons.someIcon)`).
+- Never use system colors (`Color.blue`, `UIColor.systemBackground`, etc.). Define the color in the asset catalog and reference it through the SwiftGen-generated enum (e.g. `Asset.Colors.primary.swiftUIColor`).
+- Colors and image assets must always be accessed via the strongly-typed SwiftGen-generated enums, never by string name.
 - Follow existing architecture. Do not introduce new patterns without discussion.
 - If a change touches more than 3 files, describe the plan first.
 - Never include `Co-Authored-By` or any Claude/AI attribution in commit messages.
