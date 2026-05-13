@@ -37,7 +37,7 @@ analyzer_rules:
   - unused_declaration
   - unused_import
 
-opt_in_rules: # some rules are only opt-in
+opt_in_rules:
   - discarded_notification_center_observer
   - enum_case_associated_values_count
   - file_header
@@ -46,12 +46,10 @@ opt_in_rules: # some rules are only opt-in
   - legacy_random
   - override_in_extension
   - private_action
-  - type_contents_order
   - unavailable_function
   - unowned_variable_capture
   - vertical_whitespace_between_cases
   - yoda_condition
-  - attributes
   - balanced_xctest_lifecycle
   - closure_body_length
   - closure_end_indentation
@@ -127,9 +125,10 @@ opt_in_rules: # some rules are only opt-in
   - file_name
   - large_tuple
 
-excluded: # paths to ignore during linting. Takes precedence over `included`.
+excluded:
   - Carthage
   - Pods
+  - local
 
 discouraged_direct_init:
   types: ["Bundle", "Bundle.init", "UIDevice", "UIDevice.init"]
@@ -163,10 +162,6 @@ line_length:
   warning: 230
   error: 250
 shorthand_operator: warning
-attributes:
-  always_on_same_line: ["@IBAction", "@NSManaged"]
-  always_on_line_above: []
-  severity: error
 balanced_xctest_lifecycle:
   severity: error
 block_based_kvo:
@@ -280,7 +275,7 @@ no_space_in_method_call:
   severity: error
 opening_brace:
   severity: error
-operator_whitespace:
+function_name_whitespace:
   severity: error
 private_unit_test:
   severity: error
@@ -291,8 +286,6 @@ reduce_boolean:
 redundant_discardable_let:
   severity: error
 redundant_objc_attribute:
-  severity: error
-implicit_optional_initialization:
   severity: error
 redundant_set_access_control:
   severity: error
@@ -463,23 +456,6 @@ type_name:
 closure_body_length:
   warning: 100
   error: 200
-type_contents_order:
-  order:
-    - case
-    - type_alias
-    - associated_type
-    - subtype
-    - type_property
-    - instance_property
-    - ib_inspectable
-    - ib_outlet
-    - ib_action
-    - subscript
-    - initializer
-    - deinitializer
-    - view_life_cycle_method
-    - type_method
-    - other_method
 file_length:
   warning: 1500
   error: 2500
