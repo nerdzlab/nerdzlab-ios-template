@@ -40,7 +40,7 @@ When multiple skills apply, invoke the most specific one first.
 
 ```bash
 # Lint
-swiftlint lint --config swiftlint.yml
+swiftlint lint
 
 # Generate assets
 swiftgen config run --config swiftgen.yml
