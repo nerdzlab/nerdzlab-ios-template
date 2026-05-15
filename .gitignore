@@ -63,3 +63,6 @@ fastlane/test_output
 
 # Claude
 .claude/settings.local.json
+
+# Local files
+/local
