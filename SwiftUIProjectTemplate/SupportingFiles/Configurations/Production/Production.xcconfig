@@ -1,0 +1,11 @@
+//
+//  Production.xcconfig
+//
+
+#include "SwiftUIProjectTemplate/SupportingFiles/Configurations/Common/Common.xcconfig"
+
+CFG_APP_ID = com.prod.template.app
+CFG_DISPLAY_NAME = SwiftUIProjectTemplate
+
+CFG_FIREBASE_FOLDER_NAME = Production
+CFG_FIREBASE_PLIST_NAME = GoogleService-Info-Prod

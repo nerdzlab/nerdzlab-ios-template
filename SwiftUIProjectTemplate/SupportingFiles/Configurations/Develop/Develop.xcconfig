@@ -1,0 +1,11 @@
+//
+//  Develop.xcconfig
+//
+
+#include "SwiftUIProjectTemplate/SupportingFiles/Configurations/Common/Common.xcconfig"
+
+CFG_APP_ID = com.dev.template.app
+CFG_DISPLAY_NAME = SwiftUIProjectTemplate Dev
+
+CFG_FIREBASE_FOLDER_NAME = Develop
+CFG_FIREBASE_PLIST_NAME = GoogleService-Info-Dev

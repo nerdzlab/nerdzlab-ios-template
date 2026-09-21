@@ -1,0 +1,77 @@
+# SwiftFormat configuration for iOS projects.
+# Runs as a pre-commit hook via Lefthook; auto-fixes and re-stages staged files.
+#
+# This config has been validated against a real-world multi-module SPM iOS app
+# and hardens against the most common SwiftFormat-vs-SwiftLint interactions.
+# Read the inline notes before changing anything; each `--disable` exists for
+# a specific build-breaking reason we hit in production.
+
+--swiftversion 5.9
+
+--exclude Pods,Carthage,.build,DerivedData,fastlane,vendor,local
+--exclude **/Generated,**/*.generated.swift
+
+# Indentation
+--indent 4
+--indentcase false
+
+# Wrapping
+# `preserve` keeps existing intentional wraps. Switch to `before-first` only
+# if the team has aligned on always-wrap style; otherwise SwiftFormat will
+# churn through working code on every commit.
+--wraparguments preserve
+--wrapparameters preserve
+--wrapcollections preserve
+--closingparen balanced
+
+# Style
+# Trailing commas: most iOS team SwiftLint configs ship with
+# `trailing_comma: severity: error` + `mandatory_comma: false`, which forbids
+# them. `inline` matches that contract. If your team's SwiftLint requires
+# trailing commas, switch to `always`.
+--commas inline
+--stripunusedargs closure-only
+
+# Imports: alphabetized, @testable imports float to the bottom.
+--importgrouping testable-bottom
+
+# Headers: `ignore` preserves whatever the team writes at the top of files
+# (Xcode-style file/module headers, copyright blocks, etc.). Use `strip` only
+# if the team has explicitly agreed to remove headers.
+--header ignore
+
+# Number formatting
+# Most team SwiftLint configs own `number_separator`. Leave number formatting
+# to SwiftLint to avoid two tools fighting over underscores.
+--decimalgrouping ignore
+--binarygrouping ignore
+--hexgrouping ignore
+
+# Disabled rules
+# Each `--disable` below was added after a real regression in pilot.
+# Do NOT remove without first running `swiftformat .` + a full `xcodebuild`
+# and verifying nothing breaks.
+
+# redundantSelf strips `self.` from inside closure bodies. When the closure
+# uses `[weak self] in guard let self else { return }` followed by
+# `self.method()`, removing the explicit `self.` leaves SwiftLint's
+# `unused_capture_list` rule seeing no `self` reference and flagging
+# `[weak self]` as unused. Devs who follow SwiftLint's suggestion and remove
+# the capture list reintroduce strong captures, retain cycles, crashes.
+# Keep `self.` explicit; SwiftLint will handle the rare genuine redundancy.
+--disable redundantSelf
+
+# redundantType is unsafe when the LHS type annotation is load-bearing for
+# Swift's type inference around failable initializers. Example pattern:
+#   let route: ACNCidrRange = ACNCidrRange(cidrString: "0.0.0.0/0")
+# Removing the annotation makes `route` infer to `ACNCidrRange?`, which
+# breaks downstream array-literal type inference and fails compilation.
+--disable redundantType
+
+# conditionalAssignment rewrites `let x: T; switch ... { case: x = ... }`
+# into the Swift 5.9 expression-switch form
+# `let x: T = switch ... { case: ... }`. Most team SwiftLint configs ship
+# `switch_case_alignment: indented_cases: false` which then flags `case`
+# indentation against the `switch` keyword on the assignment line and fails
+# the build. Keep the multi-statement form.
+--disable conditionalAssignment
