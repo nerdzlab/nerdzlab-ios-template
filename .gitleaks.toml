@@ -1,0 +1,28 @@
+# gitleaks configuration for the pre-commit secrets scan.
+# Extends the default ruleset; add project-specific allowlist entries below.
+# Docs: https://github.com/gitleaks/gitleaks
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Project-wide allowlist"
+
+# Paths gitleaks should ignore entirely. Add test fixtures, mocks, or sample
+# config files here when they contain placeholder credentials.
+paths = [
+  '''(.*?)Tests/Fixtures/.*''',
+  '''(.*?)Mocks/.*''',
+  '''.*\.xcassets/.*''',
+  '''Pods/.*''',
+  '''Carthage/.*''',
+  '''\.build/.*''',
+]
+
+# Regex patterns for known-safe placeholder values. Extend cautiously;
+# overly broad regexes will mask real leaks.
+regexes = [
+  '''(?i)example[_-]?(api[_-]?key|token|secret)''',
+  '''(?i)your[_-]?(api[_-]?key|token|secret)[_-]?here''',
+  '''xxxxxxxxxxxxxxxxxxxx''',
+]

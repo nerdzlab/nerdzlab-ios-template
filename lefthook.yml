@@ -1,0 +1,41 @@
+# Lefthook config for iOS/Swift pre-commit hooks.
+#
+# Target: all checks complete in under 10 seconds on a typical staged change.
+# Scope: only staged files. No build, no tests, no network calls.
+#
+# Install once per machine:
+#   ./scripts/install-hooks.sh
+#
+# Bypass (emergency only):
+#   git commit --no-verify
+
+pre-commit:
+  parallel: true
+  commands:
+
+    format:
+      glob: "*.swift"
+      run: swiftformat {staged_files}
+      stage_fixed: true
+
+    lint:
+      glob: "*.swift"
+      run: swiftlint lint --strict --quiet --use-stdin
+      # --use-stdin avoids loading the whole project; SwiftLint reads
+      # the staged file contents directly via {staged_files}.
+      # If --use-stdin causes issues with custom rules, fall back to:
+      #   run: swiftlint lint --strict --quiet {staged_files}
+
+    secrets:
+      run: gitleaks protect --staged --redact --no-banner
+
+    hygiene:
+      glob: "*"
+      run: |
+        set -e
+        for f in {staged_files}; do
+          if grep -E -q '^(<{7}|={7}|>{7})' "$f"; then
+            echo "Merge conflict marker found in $f"
+            exit 1
+          fi
+        done
